@@ -3,7 +3,7 @@ var autoprefixer = require('autoprefixer')
 
 module.exports = {
   devtool: 'source-map',
-  entry: './app/App.jsx',
+  entry: './src/App.jsx',
   output: {
     filename: "bundle.js",
     path: __dirname + "/build/",

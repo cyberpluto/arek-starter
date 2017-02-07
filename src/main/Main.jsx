@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {exampleAction} from './main-duck.js'
-import styles from './main.scss'
 
 @connect(({main}) => ({
 	test: main.test,
@@ -13,10 +12,9 @@ class Main extends Component {
 		const {test, exampleAction} = this.props
 		return (
 			<button
-				className={styles.main}
 				onClick={exampleAction}
 			>
-				Click me: {test}
+				Click: {test}
 			</button>
 		)
 	}
