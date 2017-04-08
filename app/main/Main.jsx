@@ -2,14 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {exampleAction} from 'Redux/ducks/main-duck.js'
 
-@connect(({main: {test}}) => ({
-	test,
-}), {
-	exampleAction,
-})
+// @connect(({main: {test}}) => ({
+// 	test,
+// }), {
+// 	exampleAction,
+// })
 class Main extends Component {
 	render() {
-		const {test, exampleAction} = this.props
+		const {main: {test}, exampleAction} = this.props
 		return (
 			<button
 				onClick={exampleAction}
@@ -20,5 +20,11 @@ class Main extends Component {
 	}
 }
 
-export default Main
+function mapStateToProps(state) {
+  return { test: state.test }
+}
+
+export default connect(state => state, {exampleAction})(Main)
+
+// export default Main
 	
