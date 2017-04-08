@@ -1,11 +1,9 @@
 import {combineReducers} from 'redux'
-import {routerReducer} from 'react-router-redux'
 
-import main from './main/main-duck'
+import main from 'Redux/ducks/main-duck'
 
 const rootReducer = combineReducers({
 	main,
-	routing: routerReducer,
 })
 
 export default rootReducer

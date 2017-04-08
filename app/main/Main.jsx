@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {exampleAction} from './main-duck.js'
+import {exampleAction} from 'Redux/ducks/main-duck.js'
 
-@connect(({main}) => ({
-	test: main.test,
+@connect(({main: {test}}) => ({
+	test,
 }), {
 	exampleAction,
 })

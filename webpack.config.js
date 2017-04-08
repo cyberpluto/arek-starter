@@ -1,16 +1,22 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/App.jsx',
+    './app/App.jsx',
   ],
   output: {
-    path: './build',
+    path: './dist',
     filename: 'bundle.js',
   },
   devServer: {
     inline: true
+  },
+  resolve: {
+    alias: {
+      Redux: path.resolve(__dirname, 'app/redux/'),
+    }
   },
   module: {
     loaders: [
