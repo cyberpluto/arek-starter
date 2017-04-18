@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux'
 
-import main from 'Redux/ducks/main-duck'
+import reduxExample from 'Redux/ducks/example-duck'
 
 const rootReducer = combineReducers({
-	main,
+	reduxExample,
 })
 
 export default rootReducer
