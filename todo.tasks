@@ -1,3 +1,4 @@
 Arek-starter:
-	✔ remove unnecessary files @done
-	✔ create "Hello World" app @done
+	☐ install styled-components
+	☐ add react router v4
+	☐ test on Heroku
