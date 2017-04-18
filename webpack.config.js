@@ -3,11 +3,9 @@ const path = require('path')
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    './app/App.jsx',
-  ],
+  entry: './app/App.jsx',
   output: {
-    path: './dist',
+    path: __dirname + '/dist',
     filename: 'bundle.js',
   },
   devServer: {

@@ -4,18 +4,24 @@ module.exports = {
   devtool: 'source-map',
   entry: './app/App.jsx',
   output: {
-    filename: "bundle.js",
-    path: __dirname + "/build/",
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    alias: {
+      Redux: path.resolve(__dirname, 'app/redux/'),
+      components: path.resolve(__dirname, 'app/components/'),
+    }
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
       }
     ]
   },
