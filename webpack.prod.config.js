@@ -2,13 +2,13 @@ const webpack = require("webpack")
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/App.jsx',
+  entry: './app/App.jsx',
   output: {
     filename: "bundle.js",
     path: __dirname + "/build/",
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   module: {
     loaders: [

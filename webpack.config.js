@@ -16,6 +16,7 @@ module.exports = {
   resolve: {
     alias: {
       Redux: path.resolve(__dirname, 'app/redux/'),
+      components: path.resolve(__dirname, 'app/components/'),
     }
   },
   module: {
