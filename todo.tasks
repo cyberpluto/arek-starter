@@ -1,4 +1,5 @@
 Arek-starter:
-	☐ install styled-components
+	✔ install styled-components @done (5/16/2017, 9:29:56 PM)
 	☐ add react router v4
 	☐ test on Heroku
+	☐ 
