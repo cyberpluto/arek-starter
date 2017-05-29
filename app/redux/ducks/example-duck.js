@@ -3,7 +3,7 @@ const EXAMPLE_ACTION = 'app/Main/EXAMPLE_ACTION'
 
 // Reducer
 const initialState = {
-  test: 'init value',
+	test: 'init value',
 }
 
 export default (state = initialState, action) => {

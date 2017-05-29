@@ -10,7 +10,7 @@ class About extends Component {
 				</Link>
 				<p>This is about page.</p>
 			</div>
-		);
+		)
 	}
 }
 

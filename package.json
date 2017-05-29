@@ -7,7 +7,8 @@
     "serve": "./node_modules/.bin/http-server -p 8080",
     "build": "webpack",
     "postinstall": "webpack --config webpack.prod.config.js -p",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "xo"
   },
   "author": "Arkadiusz Zalewski",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "babel-preset-react": "^6.5.0",
     "express": "^4.14.0",
     "http-server": "^0.9.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-hot-loader": "^3.0.0-beta.3",
@@ -32,5 +34,70 @@
     "styled-components": "^1.4.5",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^1.16.3"
+  },
+  "devDependencies": {
+    "eslint-config-xo-react": "^0.12.0",
+    "eslint-plugin-react": "^7.0.1",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "semicolon": false,
+    "extends": "xo-react",
+    "rules": {
+      "import/first": 1,
+      "import/newline-after-import": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unresolved": 0,
+      "import/order": 0,
+      "no-mixed-operators": 1,
+      "react/jsx-filename-extension": 0,
+      "react/require-optimization": 1,
+      "react/prop-types": 1,
+      "unicorn/no-abusive-eslint-disable": 1,
+      "unicorn/filename-case": 0,
+      "unicorn/explicit-length-check": 0,
+      "max-statements-per-line": [
+        2,
+        {
+          "max": 2
+        }
+      ],
+      "quotes": 0,
+      "quote-props": 0,
+      "eqeqeq": [
+        2,
+        "allow-null"
+      ],
+      "no-eq-null": 0,
+      "operator-linebreak": [
+        2,
+        "after",
+        {
+          "overrides": {
+            "?": "ignore",
+            ":": "ignore"
+          }
+        }
+      ],
+      "brace-style": [
+        2,
+        "1tbs",
+        {
+          "allowSingleLine": true
+        }
+      ],
+      "babel/arrow-parens": 0,
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "react/jsx-closing-bracket-location": [
+        2,
+        "tag-aligned"
+      ],
+      "react/jsx-no-bind": 0,
+      "import-order/import-order": 0,
+      "prefer-template": 0
+    }
   }
 }

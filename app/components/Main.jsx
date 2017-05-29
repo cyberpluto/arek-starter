@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {exampleAction} from 'Redux/ducks/example-duck.js'
+import {exampleAction} from 'Redux/ducks/example-duck'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
@@ -35,9 +36,13 @@ class Main extends Component {
 		)
 	}
 }
+Main.propTypes = {
+	test: PropTypes.string.isRequired,
+	exampleAction: PropTypes.func.isRequired,
+}
 
 function mapStateToProps(state) {
-  return {test: state.reduxExample.test}
+	return {test: state.reduxExample.test}
 }
 
 export default connect(mapStateToProps, {exampleAction})(Main)
