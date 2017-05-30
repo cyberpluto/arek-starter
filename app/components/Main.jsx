@@ -4,35 +4,25 @@ import {connect} from 'react-redux'
 import {exampleAction} from 'Redux/ducks/example-duck'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import LaunchButton from 'components/LaunchButton'
 
-const Button = styled.button`
-	background: rgb(145,202,73);
-	border: none;
-	border-radius: .5em;
-	color: #fff;
-	font-size: 1.5em;
-	padding: .5em;
-	&:focus {
-		outline: 0;
-	}
+const Wrapper = styled.div`
+	text-align: center;
+	width: 100%;
 `
 
 class Main extends Component {
 	render() {
 		const {test, exampleAction} = this.props
 		return (
-			<div>
+			<Wrapper>
 				<div>
 					<Link to="/about">
 						Abouut
 					</Link>
 				</div>
-				<Button
-					onClick={exampleAction}
-				>
-					Click: {test}
-				</Button>
-			</div>
+				<LaunchButton onClick={exampleAction}/>
+			</Wrapper>
 		)
 	}
 }
