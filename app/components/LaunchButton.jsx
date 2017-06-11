@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
-const reactIcon = require('assets/icons/react.svg')
-console.log(reactIcon)
+import Icon, {glyphs} from 'components/Icon'
+
+console.log(glyphs)
 
 const Button = styled.button`
 	background: Crimson;
@@ -14,6 +16,9 @@ const Button = styled.button`
 	font-size: 1.5em;
 	padding: .5em;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	&:focus {
 		outline: 0;
 	}
@@ -23,16 +28,23 @@ const Button = styled.button`
 		outline: 0;
 	}
 `
-const Icon = styled.img`
-	fill: #fff;
+const ReactIcon = styled(Icon)`
+	fill: turquoise;
+	width: 3rem;
+	height: 3rem;
 `
 
 const LaunchButton = ({onClick}) => {
 	return (
-		<Button onClick={onClick}>
-			<Icon src={reactIcon}/>
-		</Button>
+		<div>
+			<Button onClick={onClick}>
+				<ReactIcon glyph="react"/>
+			</Button>
+		</div>
 	)
+}
+LaunchButton.propTypes = {
+	onClick: PropTypes.func,
 }
 
 export default LaunchButton

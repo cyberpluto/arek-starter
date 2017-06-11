@@ -33,6 +33,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.5.2",
     "styled-components": "^1.4.5",
+    "svg-sprite-loader": "^3.0.3",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^1.16.3"
   },
@@ -52,7 +53,9 @@
       "import/order": 0,
       "no-mixed-operators": 1,
       "react/jsx-filename-extension": 0,
+      "react/jsx-tag-spacing": 1,
       "react/require-optimization": 1,
+      "react/require-default-props": 0,
       "react/prop-types": 1,
       "unicorn/no-abusive-eslint-disable": 1,
       "unicorn/filename-case": 0,

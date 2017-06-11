@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
 	devtool: 'source-map',
@@ -22,11 +23,6 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
-				exclude: /node_modules/,
-				loader: "file-loader?name=/public/icons/[name].[ext]",
-			},
-			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
@@ -34,6 +30,11 @@ module.exports = {
 					presets: ['react', 'es2015'],
 				},
 			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-sprite-loader',
+			},
 		],
 	},
+	plugins: [new SpriteLoaderPlugin()],
 }
