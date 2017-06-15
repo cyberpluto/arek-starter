@@ -1,4 +1,10 @@
 import React, {Component} from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  withRouter,
+	Link,
+} from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from 'components/Icon'
 import Button from 'components/Button'
@@ -12,18 +18,16 @@ const ReactRouterIcon = styled(Icon)`
 `
 
 class ReactRouterButton extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {active: false}
-	}
 	render() {
-		const {active} = this.state
+		const {match: {params: {param}}} = this.props
 		return (
-			<Button onClick={() => this.setState({active: !active})} active={active}>
-				<ReactRouterIcon glyph="reactRouterLogo" active={active}/>
-			</Button>
+			<Link to={param ? "/" : "/active"}>
+				<Button active={param}>
+					<ReactRouterIcon glyph="reactRouterLogo" active={param}/>
+				</Button>
+			</Link>
 		)
 	}
 }
 
-export default ReactRouterButton
+export default withRouter(ReactRouterButton)

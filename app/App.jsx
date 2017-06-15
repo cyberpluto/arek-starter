@@ -11,13 +11,12 @@ import About from 'components/About.jsx'
 // Store
 import store from 'Redux/store'
 
-render (
+render(
 	<Provider store={store}>
 		<Router>
-			<Switch>
-				<Route exact path="/" component={Main}/>
-				<Route path="/about" component={About}/>
-			</Switch>
+			<div>
+				<Route path="/:param?" component={Main}/>
+			</div>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
