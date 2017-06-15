@@ -18,7 +18,7 @@ class ReactButton extends Component {
 	render() {
 		const {active} = this.state
 		return (
-			<Button onClick={() => this.setState({active: !active})}>
+			<Button onClick={() => this.setState({active: !active})} active={active}>
 				<ReactIcon glyph="reactLogo" active={active}/>
 			</Button>
 		)

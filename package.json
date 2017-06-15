@@ -28,6 +28,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-dom-confetti": "^0.0.7",
     "react-hot-loader": "^3.0.0-beta.3",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",

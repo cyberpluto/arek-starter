@@ -17,7 +17,7 @@ class ReduxButton extends Component {
 	render() {
 		const {test, exampleAction} = this.props
 		return (
-			<Button onClick={() => exampleAction(!test)}>
+			<Button onClick={() => exampleAction(!test)} active={test}>
 				<ReactIcon glyph="reduxLogo" active={test}/>
 			</Button>
 		)
