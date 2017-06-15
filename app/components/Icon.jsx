@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import react from 'assets/icons/react.svg'
-import rocket from 'assets/icons/rocket.svg'
+import reactLogo from 'assets/icons/react-logo.svg'
+import reduxLogo from 'assets/icons/redux-logo.svg'
+import reactRouterLogo from 'assets/icons/react-router-logo.svg'
 
+// Use svgomg before placing svg files in project
 export const glyphs = {
-	react,
-	rocket,
+	reactLogo,
+	reduxLogo,
+	reactRouterLogo,
 }
 
 const IconWrapper = styled.div`
@@ -18,12 +21,13 @@ const IconWrapper = styled.div`
 	}
 `
 
-const Icon = ({glyph, ...rest}) =>
+const Icon = ({glyph, ...rest}) => (
 	<IconWrapper {...rest}>
 		<svg viewBox={glyphs[glyph].viewBox}>
 			<use xlinkHref={`#${glyphs[glyph].id}`}/>
 		</svg>
 	</IconWrapper>
+)
 Icon.propTypes = {
 	glyph: PropTypes.string,
 }
