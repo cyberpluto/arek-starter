@@ -3,19 +3,20 @@ const EXAMPLE_ACTION = 'app/Main/EXAMPLE_ACTION'
 
 // Reducer
 const initialState = {
-	test: 'init value',
+	test: false,
 }
 
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case EXAMPLE_ACTION:
-			return {...state, test: 'test passed'}
+			return {...state, test: action.value}
 		default:
 			return state
 	}
 }
 
 // Action Creators
-export const exampleAction = () => ({
+export const exampleAction = (value) => ({
 	type: EXAMPLE_ACTION,
+	value,
 })

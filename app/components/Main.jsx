@@ -1,38 +1,33 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {exampleAction} from 'Redux/ducks/example-duck'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import LaunchButton from 'components/LaunchButton'
+import ReactButton from 'components/ReactButton'
+import ReduxButton from 'components/ReduxButton'
+import StyledComponentsButton from 'components/StyledComponentsButton'
+import ReactRouterButton from 'components/ReactRouterButton'
 
 const Wrapper = styled.div`
 	text-align: center;
 	width: 100%;
 `
+const ButtonWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+`
 
-class Main extends Component {
+export default class Main extends Component {
 	render() {
-		const {test, exampleAction} = this.props
 		return (
 			<Wrapper>
-				<div>
-					<Link to="/about">
-						Abouut
-					</Link>
-				</div>
-				<LaunchButton onClick={exampleAction}/>
+				<ButtonWrapper>
+					<ReactButton/>
+					<ReduxButton/>
+					<StyledComponentsButton/>
+					<ReactRouterButton/>
+				</ButtonWrapper>
 			</Wrapper>
 		)
 	}
 }
-Main.propTypes = {
-	test: PropTypes.string.isRequired,
-	exampleAction: PropTypes.func.isRequired,
-}
-
-function mapStateToProps(state) {
-	return {test: state.reduxExample.test}
-}
-
-export default connect(mapStateToProps, {exampleAction})(Main)

@@ -1,5 +1,12 @@
 Arek-starter:
 	✔ install styled-components @done (5/16/2017, 9:29:56 PM)
-	☐ add react router v4
+	✔ add react router v4 @done (6/15/2017, 1:20:26 PM)
 	☐ test on Heroku
 	☐ 
+
+
+Tech buttons and what they do
+1. react - change of components state
+2. redux - change of redux store
+3. react-router - change of url
+4. styled-components - 
