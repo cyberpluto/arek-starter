@@ -1,12 +1,10 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 // Import Components
-import Main from 'components/Main.jsx'
-import About from 'components/About.jsx'
-// import About from 'components/About.jsx'
+import Main from 'components/Main'
 
 // Store
 import store from 'Redux/store'

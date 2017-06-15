@@ -24,8 +24,8 @@ export default class Main extends Component {
 				<ButtonWrapper>
 					<ReactButton/>
 					<ReduxButton/>
-					<StyledComponentsButton/>
 					<ReactRouterButton/>
+					<StyledComponentsButton/>
 				</ButtonWrapper>
 			</Wrapper>
 		)

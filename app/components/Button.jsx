@@ -1,15 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Confetti from 'react-dom-confetti'
-
-const config = {
-	angle: 90,
-	spread: 180,
-	startVelocity: 20,
-	elementCount: 40,
-	decay: 0.95,
-}
 
 const ActionButton = styled.button`
 	background: rgba(0,0,0,.2);
@@ -38,10 +29,9 @@ const ActionButton = styled.button`
 
 class Button extends Component {
 	render() {
-		const {active, children, onClick} = this.props
+		const {children, onClick} = this.props
 		return (
 			<ActionButton onClick={onClick}>
-				<Confetti active={active} config={config}/>
 				{children}
 			</ActionButton>
 		)

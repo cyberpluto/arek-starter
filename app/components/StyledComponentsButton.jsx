@@ -1,6 +1,15 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import Button from 'components/Button'
+import Confetti from 'react-dom-confetti'
+
+const config = {
+	angle: 90,
+	spread: 180,
+	startVelocity: 20,
+	elementCount: 40,
+	decay: 0.95,
+}
 
 const EmojiWrapper = styled.div`
 	font-size: 2.5rem;
@@ -17,6 +26,7 @@ class StyledComponentsButton extends Component {
 		const {active} = this.state
 		return (
 			<Button onClick={() => this.setState({active: !active})} active={active}>
+				<Confetti active={active} config={config}/>
 				<EmojiWrapper active={active}>
 					💅
 				</EmojiWrapper>

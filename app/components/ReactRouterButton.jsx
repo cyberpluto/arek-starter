@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  withRouter,
-	Link,
-} from 'react-router-dom'
+import PropTypes from 'prop-types'
+import {withRouter, Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Icon from 'components/Icon'
 import Button from 'components/Button'
@@ -22,12 +18,15 @@ class ReactRouterButton extends Component {
 		const {match: {params: {param}}} = this.props
 		return (
 			<Link to={param ? "/" : "/active"}>
-				<Button active={param}>
+				<Button>
 					<ReactRouterIcon glyph="reactRouterLogo" active={param}/>
 				</Button>
 			</Link>
 		)
 	}
+}
+ReactRouterButton.propTypes = {
+	match: PropTypes.object,
 }
 
 export default withRouter(ReactRouterButton)
