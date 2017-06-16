@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Button from 'components/Button'
 import Confetti from 'react-dom-confetti'
 
+const message = `I do all the styling.`
+
 const config = {
 	angle: 90,
 	spread: 180,
@@ -25,7 +27,11 @@ class StyledComponentsButton extends Component {
 	render() {
 		const {active} = this.state
 		return (
-			<Button onClick={() => this.setState({active: !active})} active={active}>
+			<Button
+				id="styled-components"
+				message={message}
+				onClick={() => this.setState({active: !active})}
+			>
 				<Confetti active={active} config={config}/>
 				<EmojiWrapper active={active}>
 					💅

@@ -5,6 +5,11 @@ import styled from 'styled-components'
 import Icon from 'components/Icon'
 import Button from 'components/Button'
 
+const Anchor = styled(Link)`
+	display: block;
+`
+const message = `Location has changed.`
+
 const ReactRouterIcon = styled(Icon)`
 	width: 3rem;
 	height: 3rem;
@@ -17,11 +22,14 @@ class ReactRouterButton extends Component {
 	render() {
 		const {match: {params: {param}}} = this.props
 		return (
-			<Link to={param ? "/" : "/active"}>
-				<Button>
+			<Anchor to={param ? "/" : "/active"}>
+				<Button
+					id="react-router"
+					message={message}
+				>
 					<ReactRouterIcon glyph="reactRouterLogo" active={param}/>
 				</Button>
-			</Link>
+			</Anchor>
 		)
 	}
 }

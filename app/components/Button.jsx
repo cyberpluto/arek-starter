@@ -1,6 +1,14 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
 import styled from 'styled-components'
+import Message from 'components/Message'
+import {showInfo} from 'Redux/ducks/buttonInfo-duck'
+
+const Wrapper = styled.div`
+	position: relative;
+	padding: .5rem;
+`
 
 const ActionButton = styled.button`
 	background: rgba(0,0,0,.2);
@@ -12,7 +20,6 @@ const ActionButton = styled.button`
 	color: #fff;
 	font-size: 1.5rem;
 	padding: .5rem;
-	margin: .5rem
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -29,17 +36,32 @@ const ActionButton = styled.button`
 
 class Button extends Component {
 	render() {
-		const {children, onClick} = this.props
+		const {children, id, message, onClick, showInfo} = this.props
 		return (
-			<ActionButton onClick={onClick}>
-				{children}
-			</ActionButton>
+			<Wrapper>
+				<Message id={id} value={message}/>
+				<ActionButton
+					onClick={() => {
+						if (onClick) {onClick()}
+						showInfo(id)
+					}}
+				>
+					{children}
+				</ActionButton>
+			</Wrapper>
 		)
 	}
 }
 Button.propTypes = {
+	id: PropTypes.string,
+	message: PropTypes.string,
 	children: PropTypes.node,
 	onClick: PropTypes.func,
+	showInfo: PropTypes.func,
 }
 
-export default Button
+function mapStateToProps(state) {
+	return {buttonId: state.buttonInfo.buttonId}
+}
+
+export default connect(mapStateToProps, {showInfo})(Button)

@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
 }
 
 // Action Creators
-export const exampleAction = (value) => ({
+export const exampleAction = value => ({
 	type: EXAMPLE_ACTION,
 	value,
 })

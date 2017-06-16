@@ -6,6 +6,8 @@ import {connect} from 'react-redux'
 import {exampleAction} from 'Redux/ducks/example-duck'
 import Button from 'components/Button'
 
+const message = `Redux state has changed.`
+
 const ReactIcon = styled(Icon)`
 	fill: ${p => p.active ? `#764ABC` : `rgba(0,0,0,.3)`};
 	width: 3rem;
@@ -17,7 +19,11 @@ class ReduxButton extends Component {
 	render() {
 		const {test, exampleAction} = this.props
 		return (
-			<Button onClick={() => exampleAction(!test)}>
+			<Button
+				id="redux"
+				message={message}
+				onClick={() => exampleAction(!test)}
+			>
 				<ReactIcon glyph="reduxLogo" active={test}/>
 			</Button>
 		)

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Icon from 'components/Icon'
 import Button from 'components/Button'
 
+const message = `My state has changed.`
+
 const ReactIcon = styled(Icon)`
 	fill: ${p => p.active ? `#00d8ff` : `rgba(0,0,0,.3)`};
 	width: 3rem;
@@ -18,7 +20,11 @@ class ReactButton extends Component {
 	render() {
 		const {active} = this.state
 		return (
-			<Button onClick={() => this.setState({active: !active})}>
+			<Button
+				id="react"
+				message={message}
+				onClick={() => {this.setState({active: !active})}}
+			>
 				<ReactIcon glyph="reactLogo" active={active}/>
 			</Button>
 		)
