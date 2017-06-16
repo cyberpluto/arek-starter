@@ -35,6 +35,10 @@ module.exports = {
 				test: /\.svg$/,
 				loader: 'svg-sprite-loader',
 			},
+			{
+				test: /\.css$/,
+				use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
+			},
 		],
 	},
 	plugins: [new SpriteLoaderPlugin()],
