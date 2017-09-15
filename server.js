@@ -33,7 +33,7 @@ app.use(middleware)
 app.use(webpackHotMiddleware(compiler))
 
 app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'index.html'))
+	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.listen(port)

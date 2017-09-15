@@ -4,11 +4,15 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
 	devtool: 'source-map',
-	entry: './app/App.jsx',
+	entry: [
+		'react-hot-loader/patch',
+		'webpack-hot-middleware/client',
+		'./app/index.jsx',
+	],
 	output: {
 		path: __dirname + '/dist',
-		filename: 'bundle.js',
 		publicPath: '/',
+		filename: 'bundle.js',
 	},
 	devServer: {
 		inline: true,
@@ -42,5 +46,10 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [new SpriteLoaderPlugin()],
+	plugins: [
+		new SpriteLoaderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		// Use NoErrorsPlugin for webpack 1.x
+		new webpack.NoEmitOnErrorsPlugin(),
+	],
 }
