@@ -4,9 +4,10 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
 	devtool: 'source-map',
-	entry: './app/App.jsx',
+	entry: './app/index.jsx',
 	output: {
 		path: __dirname + '/dist',
+		publicPath: '/',
 		filename: 'bundle.js',
 	},
 	resolve: {
@@ -24,6 +25,10 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				query: {
+					plugins: [
+						'transform-decorators-legacy',
+						'transform-class-properties',
+					],
 					presets: ['react', 'es2015'],
 				},
 			},
@@ -39,7 +44,6 @@ module.exports = {
 	},
 	plugins: [
 		new SpriteLoaderPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: JSON.stringify('production'),

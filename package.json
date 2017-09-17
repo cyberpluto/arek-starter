@@ -6,8 +6,7 @@
     "serve": "./node_modules/.bin/http-server -p 8080",
     "build": "webpack",
     "postinstall": "webpack --config webpack.prod.config.js -p",
-    "start": "node main.js",
-    "test": "xo"
+    "start": "node main.js"
   },
   "author": "Arkadiusz Zalewski",
   "license": "ISC",

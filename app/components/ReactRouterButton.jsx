@@ -6,7 +6,7 @@ import Icon from 'components/Icon'
 import Button from 'components/Button'
 
 const Anchor = styled(Link)`display: block;`
-const message = `Location has changed.`
+const message = 'Location has changed.'
 
 const ReactRouterIcon = styled(Icon)`
 	width: 3rem;

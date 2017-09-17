@@ -51,7 +51,7 @@ class Button extends Component {
 		showInfo(id)
 	}
 	render() {
-		const {children, id, message, showInfo} = this.props
+		const {children, id, message} = this.props
 		return (
 			<Wrapper>
 				<Message id={id} value={message} />
