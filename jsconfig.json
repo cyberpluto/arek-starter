@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"baseUrl": ".",
+		"jsx": "preserve",
+		"paths": {
+			"Redux/*": [
+				"app/redux/*"
+			],
+			"components/*": [
+				"app/components/*"
+			],
+			"assets/*": [
+				"assets/*"
+			]
+		}
+	},
+	"exclude": [
+		"node_modules",
+		"dist",
+		"assets"
+	]
+}
