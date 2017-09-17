@@ -1,10 +1,6 @@
 import {
 	GraphQLObjectType,
 	GraphQLID,
-	GraphQLString,
-	GraphQLInt,
-	GraphQLSchema,
-	GraphQLList,
 	GraphQLNonNull,
 	GraphQLBoolean,
 } from 'graphql'
@@ -37,8 +33,7 @@ export const mutations = {
 			isActive: {type: GraphQLBoolean},
 		},
 		resolve(parentValue, {id, isActive}, {db}) {
-			console.log('EHE', isActive)
-			db.run(`UPDATE myTable SET isActive = $isActive WHERE id = $id`, {
+			db.run('UPDATE myTable SET isActive = $isActive WHERE id = $id', {
 				$id: id,
 				$isActive: isActive,
 			})
