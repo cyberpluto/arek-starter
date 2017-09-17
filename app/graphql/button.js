@@ -37,10 +37,11 @@ export const mutations = {
 			isActive: {type: GraphQLBoolean},
 		},
 		resolve(parentValue, {id, isActive}, {db}) {
-			db.run(
-				`INSERT INTO myTable(id, isActive) VALUES(null, $isActive) WHERE id = $id`,
-				{$id: id, $idActive: isActive}
-			)
+			console.log('EHE', isActive)
+			db.run(`UPDATE myTable SET isActive = $isActive WHERE id = $id`, {
+				$id: id,
+				$isActive: isActive,
+			})
 		},
 	},
 }
