@@ -6,6 +6,7 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "react-hot-loader/babel",
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",
+    "transform-class-properties"
   ]
 }
