@@ -47,70 +47,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "devDependencies": {
-    "eslint-config-xo-react": "^0.12.0",
-    "eslint-plugin-react": "^7.0.1",
-    "xo": "^0.18.2"
-  },
-  "xo": {
-    "semicolon": false,
-    "extends": "xo-react",
-    "rules": {
-      "import/first": 1,
-      "import/newline-after-import": 0,
-      "import/no-extraneous-dependencies": 0,
-      "import/no-unresolved": 0,
-      "import/order": 0,
-      "no-mixed-operators": 1,
-      "react/jsx-filename-extension": 0,
-      "react/jsx-tag-spacing": 1,
-      "react/require-optimization": 1,
-      "react/require-default-props": 0,
-      "react/prop-types": 1,
-      "unicorn/no-abusive-eslint-disable": 1,
-      "unicorn/filename-case": 0,
-      "unicorn/explicit-length-check": 0,
-      "max-statements-per-line": [
-        2,
-        {
-          "max": 2
-        }
-      ],
-      "quotes": 0,
-      "quote-props": 0,
-      "eqeqeq": [
-        2,
-        "allow-null"
-      ],
-      "no-eq-null": 0,
-      "operator-linebreak": [
-        2,
-        "after",
-        {
-          "overrides": {
-            "?": "ignore",
-            ":": "ignore"
-          }
-        }
-      ],
-      "brace-style": [
-        2,
-        "1tbs",
-        {
-          "allowSingleLine": true
-        }
-      ],
-      "babel/arrow-parens": 0,
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ],
-      "react/jsx-closing-bracket-location": [
-        2,
-        "tag-aligned"
-      ],
-      "react/jsx-no-bind": 0,
-      "import-order/import-order": 0,
-      "prefer-template": 0
-    }
+    "eslint": "^4.7.0",
+    "eslint-plugin-react": "^7.3.0"
   }
 }
