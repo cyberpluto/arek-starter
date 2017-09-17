@@ -1,23 +1,23 @@
 import React from 'react'
-import {Provider} from 'react-redux'
+import {ApolloClient, ApolloProvider} from 'react-apollo'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 require('../styles/reset.css')
-
 // Import Components
 import Main from 'components/Main'
-
 // Store
 import store from 'Redux/store'
 
+const client = new ApolloClient()
+
 const Root = () => {
 	return (
-		<Provider store={store}>
+		<ApolloProvider client={client} store={store}>
 			<Router>
 				<div>
 					<Route path="/:param?" component={Main} />
 				</div>
 			</Router>
-		</Provider>
+		</ApolloProvider>
 	)
 }
 
