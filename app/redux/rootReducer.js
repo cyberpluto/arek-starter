@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux'
 
-import reduxExample from 'Redux/ducks/example-duck'
+import reduxButton from 'Redux/ducks/reduxButton-duck'
 import buttonInfo from 'Redux/ducks/buttonInfo-duck'
 
 const rootReducer = combineReducers({
-	reduxExample,
+	reduxButton,
 	buttonInfo,
 })
 

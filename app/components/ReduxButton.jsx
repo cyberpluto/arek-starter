@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Icon from 'components/Icon'
 import {connect} from 'react-redux'
-import {exampleAction} from 'Redux/ducks/example-duck'
+import {reduxButtonAction} from 'Redux/ducks/reduxButton-duck'
 import Button from 'components/Button'
 
 const message = `Redux state has changed.`
@@ -16,28 +16,28 @@ const ReactIcon = styled(Icon)`
 `
 
 @connect(
-	({reduxExample: {test}}) => ({
-		test,
+	({reduxButton: {active}}) => ({
+		active,
 	}),
-	{exampleAction}
+	{reduxButtonAction}
 )
 class ReduxButton extends Component {
 	handleClick = () => {
-		const {test, exampleAction} = this.props
-		exampleAction(!test)
+		const {active, reduxButtonAction} = this.props
+		reduxButtonAction(!active)
 	}
 	render() {
-		const {test} = this.props
+		const {active} = this.props
 		return (
 			<Button id="redux" message={message} onClick={this.handleClick}>
-				<ReactIcon glyph="reduxLogo" active={test} />
+				<ReactIcon glyph="reduxLogo" active={active} />
 			</Button>
 		)
 	}
 }
 ReduxButton.propTypes = {
-	test: PropTypes.bool,
-	exampleAction: PropTypes.func,
+	active: PropTypes.bool,
+	reduxButtonAction: PropTypes.func,
 }
 
 export default ReduxButton
