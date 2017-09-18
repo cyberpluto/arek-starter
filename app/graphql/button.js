@@ -3,12 +3,14 @@ import {
 	GraphQLID,
 	GraphQLNonNull,
 	GraphQLBoolean,
+	GraphQLString,
 } from 'graphql'
 
 export const ButtonType = new GraphQLObjectType({
 	name: 'Button',
 	fields: () => ({
 		id: {type: GraphQLID},
+		message: {type: GraphQLString},
 		isActive: {type: GraphQLBoolean},
 	}),
 })

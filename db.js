@@ -7,9 +7,11 @@ db.all = promisify(db.all)
 
 db.serialize(function() {
 	db.run(
-		'CREATE TABLE IF NOT EXISTS myTable (id INTEGER PRIMARY KEY, isActive INTEGER)'
+		'CREATE TABLE IF NOT EXISTS myTable (id INTEGER PRIMARY KEY, message STRING, isActive INTEGER)'
 	)
-	db.run('INSERT OR IGNORE INTO myTable (id, isActive) VALUES (1, 0)')
+	db.run(
+		'INSERT OR IGNORE INTO myTable (id, message, isActive) VALUES (1, "QraphQl mutation was performed.", 0)'
+	)
 })
 
 export {db}

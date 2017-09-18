@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import {gql, graphql} from 'react-apollo'
 import styled from 'styled-components'
 import Icon from 'components/Icon'
-import {connect} from 'react-redux'
 import Button from 'components/Button'
-
-const message = `QraphQl mutation was performed.`
 
 const ReactIcon = styled(Icon)`
 	fill: ${p => (p.active ? `#E535AB` : `rgba(0,0,0,.3)`)};
@@ -19,6 +16,7 @@ const buttonQuery = gql`
 	query buttonInfo($id: ID!) {
 		button(id: $id) {
 			id
+			message
 			isActive
 		}
 	}
@@ -52,15 +50,21 @@ class GraphQLButton extends Component {
 		const {data: {loading, button}} = this.props
 		if (loading) return <div>...</div>
 		return (
-			<Button id="graphql" message={message} onClick={this.handleClick}>
+			<Button id="graphql" message={button.message} onClick={this.handleClick}>
 				<ReactIcon glyph="graphQLLogo" active={button.isActive} />
 			</Button>
 		)
 	}
 }
 GraphQLButton.propTypes = {
-	test: PropTypes.bool,
-	exampleAction: PropTypes.func,
+	data: PropTypes.shape({
+		loading: PropTypes.bool,
+		button: PropTypes.shape({
+			message: PropTypes.string,
+			isActive: PropTypes.bool,
+		}),
+	}),
+	mutate: PropTypes.func,
 }
 
 export default GraphQLButton
