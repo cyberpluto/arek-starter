@@ -51,11 +51,13 @@ class Button extends Component {
 		showInfo(id)
 	}
 	render() {
-		const {children, id, message} = this.props
+		const {children, id, message, ...rest} = this.props
 		return (
 			<Wrapper>
 				<Message id={id} value={message} />
-				<ActionButton onClick={this.handleClick}>{children}</ActionButton>
+				<ActionButton {...rest} onClick={this.handleClick}>
+					{children}
+				</ActionButton>
 			</Wrapper>
 		)
 	}
