@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "./node_modules/.bin/http-server -p 8080",
     "build": "webpack",
-    "postinstall": "webpack --config webpack.prod.config.js -p",
+    "heroku-postbuild": "webpack --config webpack.prod.config.js -p",
     "start": "node main.js"
   },
   "author": "Arkadiusz Zalewski",
