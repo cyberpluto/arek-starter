@@ -6,7 +6,7 @@ import webpackMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from './webpack.config.js'
 import {db} from './db'
-import {schema} from './app/graphql/schema'
+import {schema} from './src/graphql/schema'
 
 const port = process.env.PORT || 8080
 const app = express()

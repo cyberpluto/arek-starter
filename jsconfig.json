@@ -6,10 +6,10 @@
 		"jsx": "preserve",
 		"paths": {
 			"Redux/*": [
-				"app/redux/*"
+				"src/redux/*"
 			],
 			"components/*": [
-				"app/components/*"
+				"src/components/*"
 			],
 			"assets/*": [
 				"assets/*"

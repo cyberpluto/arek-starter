@@ -4,7 +4,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
 	devtool: 'source-map',
-	entry: './app/index.jsx',
+	entry: './src/index.jsx',
 	output: {
 		path: __dirname + '/dist',
 		publicPath: '/',
@@ -13,8 +13,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.jsx'],
 		alias: {
-			Redux: path.resolve(__dirname, 'app/redux/'),
-			components: path.resolve(__dirname, 'app/components/'),
+			Redux: path.resolve(__dirname, 'src/redux/'),
+			components: path.resolve(__dirname, 'src/components/'),
 			assets: path.resolve(__dirname, 'assets/'),
 		},
 	},

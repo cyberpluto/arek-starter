@@ -1,5 +1,5 @@
 // Actions
-const REDUX_BUTTON_ACTION = 'app/Main/REDUX_BUTTON_ACTION'
+const REDUX_BUTTON_ACTION = 'src/Main/REDUX_BUTTON_ACTION'
 
 // Reducer
 const initialState = {

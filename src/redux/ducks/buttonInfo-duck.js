@@ -1,6 +1,6 @@
 // Actions
-const SHOW_INFO = 'app/Button/SHOW_INFO'
-const HIDE_INFO = 'app/Button/HIDE_INFO'
+const SHOW_INFO = 'src/Button/SHOW_INFO'
+const HIDE_INFO = 'src/Button/HIDE_INFO'
 
 // Reducer
 const initialState = {
