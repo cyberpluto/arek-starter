@@ -3,6 +3,7 @@ const path = require('path')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
+	mode: 'production',
 	devtool: 'source-map',
 	entry: './src/index.jsx',
 	output: {
@@ -19,7 +20,7 @@ module.exports = {
 		},
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,

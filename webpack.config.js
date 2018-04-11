@@ -3,6 +3,7 @@ const path = require('path')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 module.exports = {
+	mode: 'development',
 	devtool: 'source-map',
 	entry: [
 		'react-hot-loader/patch',
@@ -27,7 +28,7 @@ module.exports = {
 		},
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
