@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	mode: 'development',
@@ -33,13 +34,6 @@ module.exports = {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
-				query: {
-					plugins: [
-						'transform-decorators-legacy',
-						'transform-class-properties',
-					],
-					presets: ['react', 'es2015'],
-				},
 			},
 			{
 				test: /\.svg$/,
@@ -47,14 +41,15 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
+				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
 		],
 	},
 	plugins: [
 		new SpriteLoaderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		// Use NoErrorsPlugin for webpack 1.x
-		new webpack.NoEmitOnErrorsPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/main.css',
+		}),
 	],
 }

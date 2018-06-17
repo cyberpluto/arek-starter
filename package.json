@@ -1,5 +1,5 @@
 {
-	"name": "Arek-starter",
+	"name": "arek-starter",
 	"version": "1.0.0",
 	"main": "index.html",
 	"scripts": {
@@ -41,15 +41,15 @@
 		"react-router-dom": "^4.1.1",
 		"redux": "^3.5.2",
 		"sqlite3": "^4.0.0",
-		"style-loader": "^0.20.3",
 		"styled-components": "^3.2.5",
-		"svg-sprite-loader": "^3.7.3",
-		"webpack": "^4.5.0",
-		"webpack-dev-middleware": "^3.1.2",
-		"webpack-hot-middleware": "^2.22.0"
+		"svg-sprite-loader": "^3.7.3"
 	},
 	"devDependencies": {
 		"eslint": "^4.19.1",
-		"eslint-plugin-react": "^7.7.0"
+		"eslint-plugin-react": "^7.7.0",
+		"mini-css-extract-plugin": "^0.4.0",
+		"webpack": "^4.5.0",
+		"webpack-dev-middleware": "^3.1.2",
+		"webpack-hot-middleware": "^2.22.0"
 	}
 }
