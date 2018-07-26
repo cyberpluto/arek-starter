@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import styled from 'styled-components'
 import Message from 'components/Message'
-import {showInfo} from 'Redux/ducks/buttonInfo-duck'
+import {showInfo} from 'appRedux/ducks/buttonInfo-duck'
 
 const Wrapper = styled.div`
 	position: relative;

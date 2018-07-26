@@ -5,20 +5,10 @@
 		"baseUrl": ".",
 		"jsx": "preserve",
 		"paths": {
-			"Redux/*": [
-				"src/redux/*"
-			],
-			"components/*": [
-				"src/components/*"
-			],
-			"assets/*": [
-				"assets/*"
-			]
+			"appRedux/*": ["src/redux/*"],
+			"components/*": ["src/components/*"],
+			"assets/*": ["assets/*"]
 		}
 	},
-	"exclude": [
-		"node_modules",
-		"dist",
-		"assets"
-	]
+	"exclude": ["node_modules", "dist", "assets"]
 }

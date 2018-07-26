@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Icon from 'components/Icon'
 import {connect} from 'react-redux'
-import {reduxButtonAction} from 'Redux/ducks/reduxButton-duck'
+import {reduxButtonAction} from 'appRedux/ducks/reduxButton-duck'
 import Button from 'components/Button'
 
 const message = `Redux state has changed.`

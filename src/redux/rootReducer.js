@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 
-import reduxButton from 'Redux/ducks/reduxButton-duck'
-import buttonInfo from 'Redux/ducks/buttonInfo-duck'
+import reduxButton from 'appRedux/ducks/reduxButton-duck'
+import buttonInfo from 'appRedux/ducks/buttonInfo-duck'
 
 const rootReducer = combineReducers({
 	reduxButton,

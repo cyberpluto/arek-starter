@@ -36,7 +36,10 @@ const buttonQuery = gql`
 )
 class GraphQLButton extends Component {
 	handleClick = () => {
-		const {data: {button}, mutate} = this.props
+		const {
+			data: {button},
+			mutate,
+		} = this.props
 		mutate({
 			variables: {id: 1, isActive: !button.isActive},
 			refetchQueries: [
@@ -48,7 +51,9 @@ class GraphQLButton extends Component {
 		})
 	}
 	render() {
-		const {data: {loading, button}} = this.props
+		const {
+			data: {loading, button},
+		} = this.props
 		if (loading) return <div>...</div>
 		return (
 			<Button id="graphql" message={button.message} onClick={this.handleClick}>

@@ -3,10 +3,13 @@
 	"version": "1.0.0",
 	"main": "index.html",
 	"scripts": {
-		"serve": "./node_modules/.bin/http-server -p 8080",
-		"build": "webpack",
-		"heroku-postbuild": "webpack --config webpack.prod.config.js -p",
-		"start": "node main.js"
+		"build": "NODE_ENV=production webpack --config ./webpack.production.config.js",
+		"build-dev": "NODE_ENV=development webpack -w",
+		"server": "NODE_ENV=development node dist/server.js",
+		"server-dev": "NODE_ENV=development node --inspect dist/server.js",
+		"start": "npm run build-prod && npm run server",
+		"start-dev": "npm run build-dev & npm run server-dev",
+		"heroku-postbuild": "webpack --config webpack.prod.config.js -p"
 	},
 	"author": "Arkadiusz Zalewski",
 	"license": "ISC",
@@ -14,42 +17,34 @@
 		"node": "6.4.0"
 	},
 	"dependencies": {
-		"apollo-boost": "^0.1.4",
-		"babel-core": "^6.24.1",
-		"babel-eslint": "^8.2.2",
 		"babel-loader": "^7.1.4",
-		"babel-plugin-transform-class-properties": "^6.24.1",
-		"babel-plugin-transform-decorators-legacy": "^1.3.4",
-		"babel-plugin-transform-object-rest-spread": "^6.22.0",
 		"babel-preset-es2015": "^6.22.0",
 		"babel-preset-react": "^6.5.0",
 		"babel-register": "^6.26.0",
-		"css-loader": "^0.28.11",
 		"express": "^4.16.3",
-		"express-graphql": "^0.6.12",
-		"file-loader": "^1.1.11",
-		"graphql": "^0.13.2",
-		"graphql-tag": "^2.8.0",
-		"http-server": "^0.11.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.3.1",
-		"react-apollo": "^2.1.3",
 		"react-dom": "^16.3.1",
 		"react-dom-confetti": "0.0.8",
-		"react-hot-loader": "^4.0.1",
 		"react-redux": "^5.0.7",
 		"react-router-dom": "^4.1.1",
 		"redux": "^3.5.2",
-		"sqlite3": "^4.0.0",
-		"styled-components": "^3.2.5",
-		"svg-sprite-loader": "^3.7.3"
+		"styled-components": "^3.2.5"
 	},
 	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-eslint": "^8.2.3",
+		"babel-loader": "^7.1.4",
+		"babel-plugin-transform-decorators-legacy": "^1.3.5",
+		"babel-plugin-webpack-aliases": "^1.1.3",
+		"babel-preset-react-app": "^3.1.1",
+		"css-loader": "^0.28.11",
 		"eslint": "^4.19.1",
 		"eslint-plugin-react": "^7.7.0",
-		"mini-css-extract-plugin": "^0.4.0",
-		"webpack": "^4.5.0",
-		"webpack-dev-middleware": "^3.1.2",
-		"webpack-hot-middleware": "^2.22.0"
+		"nodemon": "^1.17.5",
+		"svg-sprite-loader": "^3.8.0",
+		"webpack": "^4.12.0",
+		"webpack-cli": "^3.0.3",
+		"webpack-node-externals": "^1.7.2"
 	}
 }
