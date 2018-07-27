@@ -5,11 +5,10 @@
 	"scripts": {
 		"build": "NODE_ENV=production webpack --config ./webpack.production.config.js",
 		"build-dev": "NODE_ENV=development webpack -w",
-		"server": "NODE_ENV=development node dist/server.js",
+		"server": "NODE_ENV=production node dist/server.js",
 		"server-dev": "NODE_ENV=development node --inspect dist/server.js",
-		"start": "npm run build-prod && npm run server",
-		"start-dev": "npm run build-dev & npm run server-dev",
-		"heroku-postbuild": "webpack --config webpack.prod.config.js -p"
+		"start": "npm run build && npm run server",
+		"start-dev": "npm run build-dev & npm run server-dev"
 	},
 	"author": "Arkadiusz Zalewski",
 	"license": "ISC",
