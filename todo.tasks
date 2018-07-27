@@ -1,8 +1,7 @@
 Arek-starter:
 	✔ install styled-components @done (5/16/2017, 9:29:56 PM)
 	✔ add react router v4 @done (6/15/2017, 1:20:26 PM)
-	☐ test on Heroku
-	☐ 
+	☐ injectGlobal for reset - to reduse number os style tagas
 
 
 Tech buttons and what they do

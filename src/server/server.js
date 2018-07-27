@@ -1,11 +1,18 @@
 import express from 'express'
 import React from 'react'
 import {StaticRouter} from 'react-router'
-import {renderToString} from 'react-dom/server'
-import {ServerStyleSheet} from 'styled-components'
+import {ServerStyleSheet, StyleSheetManager} from 'styled-components'
 import sprite from 'svg-sprite-loader/runtime/sprite.build'
 import App from 'components/App'
 import reset from '../styles/reset.css'
+import {ApolloClient} from 'apollo-client'
+import {ApolloProvider, renderToStringWithData} from 'react-apollo'
+import {HttpLink} from 'apollo-link-http'
+import {InMemoryCache} from 'apollo-cache-inmemory'
+import 'isomorphic-unfetch'
+import graphqlHTTP from 'express-graphql'
+import {db} from './db'
+import {schema} from '../graphql/schema'
 
 const port = process.env.PORT || 8080
 const app = express()
@@ -13,37 +20,72 @@ const app = express()
 app.use(express.static('dist'))
 app.use(express.static('assets'))
 
-app.get('*', (req, res) => {
+app.use(
+	'/graphql',
+	graphqlHTTP({
+		schema: schema,
+		graphiql: true,
+		context: {
+			db: db,
+		},
+	})
+)
+
+app.get('*', async (req, res) => {
 	const context = {}
 	const sheet = new ServerStyleSheet()
-	const markup = renderToString(
-		sheet.collectStyles(
-			<StaticRouter location={req.url} context={context}>
-				<App />
-			</StaticRouter>
+
+	try {
+		const cache = new InMemoryCache()
+		const client = new ApolloClient({
+			ssrMode: true,
+			link: new HttpLink({
+				uri: `${req.protocol}://${req.headers.host}/graphql`,
+			}),
+			cache,
+		})
+		const component = (
+			<ApolloProvider client={client}>
+				<StaticRouter location={req.url} context={context}>
+					<StyleSheetManager sheet={sheet.instance}>
+						<App />
+					</StyleSheetManager>
+				</StaticRouter>
+			</ApolloProvider>
 		)
-	)
-	const styles = sheet.getStyleTags()
-	const spriteContent = sprite.stringify()
-	if (context.url) {
-		res.header(Location, context.url)
-	} else {
-		res.send(`
+		const content = await renderToStringWithData(component)
+		const styleTags = sheet.getStyleTags()
+		const initialState = cache.extract()
+		const spriteContent = sprite.stringify()
+		if (context.url) {
+			res.header(Location, context.url)
+		} else {
+			res.send(`
 	<!DOCTYPE html>
     <html lang="en">
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 				<script src="bundle.js" defer></script>
 				<style>${reset.toString()}</style>
-				${styles}
+				${styleTags}
 			</head>
     
 			<body>
 				${spriteContent}
-				<div id="root">${markup}</div>
+				<div id="root">${content}</div>
+				<script>
+					window.__APOLLO_STATE__=${JSON.stringify(initialState).replace(
+						/</g,
+						'\\u003c'
+					)};
+        </script>
 			</body>
 		</html>
 	`)
+		}
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.error(e)
 	}
 })
 

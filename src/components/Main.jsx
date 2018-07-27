@@ -4,7 +4,7 @@ import ReactButton from 'components/ReactButton'
 import ReduxButton from 'components/ReduxButton'
 import StyledComponentsButton from 'components/StyledComponentsButton'
 import ReactRouterButton from 'components/ReactRouterButton'
-// import GraphQLButton from 'components/GraphQLButton'
+import GraphQLButton from 'components/GraphQLButton'
 
 const Wrapper = styled.div`
 	text-align: center;
@@ -27,6 +27,7 @@ export default class Main extends Component {
 					<ReduxButton />
 					<ReactRouterButton />
 					<StyledComponentsButton />
+					<GraphQLButton />
 				</ButtonWrapper>
 			</Wrapper>
 		)
