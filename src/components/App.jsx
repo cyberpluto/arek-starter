@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
-require('../styles/reset.css')
+import '../styles/reset'
 // Import Components
 import Main from 'components/Main'
 // Store

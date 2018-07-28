@@ -29,10 +29,6 @@ const browserConfig = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 			},
-			{
-				test: /\.css$/,
-				use: ['css-loader'],
-			},
 		],
 	},
 	plugins: [
@@ -66,10 +62,6 @@ const serverConfig = {
 			{
 				test: /\.svg$/,
 				loader: 'svg-sprite-loader',
-			},
-			{
-				test: /\.css$/,
-				use: 'css-loader',
 			},
 			{
 				test: /\.jsx?$/,
