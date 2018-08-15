@@ -6,6 +6,7 @@ import {ApolloClient} from 'apollo-client'
 import {ApolloProvider} from 'react-apollo'
 import {createHttpLink} from 'apollo-link-http'
 import {InMemoryCache} from 'apollo-cache-inmemory'
+import '../styles/reset.css'
 
 const cache = new InMemoryCache().restore(window.__APOLLO_STATE__)
 const client = new ApolloClient({
