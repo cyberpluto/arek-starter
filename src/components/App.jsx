@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
-require('../styles/reset.css')
+import {hot} from 'react-hot-loader'
 // Import Components
 import Main from 'components/Main'
 // Store
@@ -15,4 +15,4 @@ const Root = () => {
 	)
 }
 
-export default Root
+export default hot(module)(Root)
