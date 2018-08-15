@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose()
-import {promisify} from 'bluebird'
-import fs from 'fs'
+const Promise = require('bluebird')
+const fs = require('fs')
 
 const dir = './dist'
 if (!fs.existsSync(dir)) {
@@ -8,8 +8,8 @@ if (!fs.existsSync(dir)) {
 }
 
 const db = new sqlite3.Database('./dist/arek-starter')
-db.get = promisify(db.get)
-db.all = promisify(db.all)
+db.get = Promise.promisify(db.get)
+db.all = Promise.promisify(db.all)
 
 db.serialize(function() {
 	db.run(
@@ -20,4 +20,4 @@ db.serialize(function() {
 	)
 })
 
-export {db}
+module.exports = {db}

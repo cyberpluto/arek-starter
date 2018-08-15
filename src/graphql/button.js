@@ -1,12 +1,12 @@
-import {
+const {
 	GraphQLObjectType,
 	GraphQLID,
 	GraphQLNonNull,
 	GraphQLBoolean,
 	GraphQLString,
-} from 'graphql'
+} = require('graphql')
 
-export const ButtonType = new GraphQLObjectType({
+const ButtonType = new GraphQLObjectType({
 	name: 'Button',
 	fields: () => ({
 		id: {type: GraphQLID},
@@ -15,7 +15,7 @@ export const ButtonType = new GraphQLObjectType({
 	}),
 })
 
-export const queries = {
+const queries = {
 	button: {
 		type: ButtonType,
 		args: {
@@ -27,7 +27,7 @@ export const queries = {
 	},
 }
 
-export const mutations = {
+const mutations = {
 	clickButton: {
 		type: ButtonType,
 		args: {
@@ -42,3 +42,5 @@ export const mutations = {
 		},
 	},
 }
+
+module.exports = {ButtonType, queries, mutations}

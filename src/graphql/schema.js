@@ -1,4 +1,4 @@
-import {
+const {
 	GraphQLObjectType,
 	GraphQLID,
 	GraphQLString,
@@ -6,10 +6,10 @@ import {
 	GraphQLSchema,
 	GraphQLList,
 	GraphQLNonNull,
-} from 'graphql'
-import {queries as buttonQueries, mutations as buttonMutations} from './button'
+} = require('graphql')
+const {queries: buttonQueries, mutations: buttonMutations} = require('./button')
 
-export const schema = new GraphQLSchema({
+const schema = new GraphQLSchema({
 	query: new GraphQLObjectType({
 		name: 'RootQueryType',
 		fields: () => ({
@@ -23,3 +23,5 @@ export const schema = new GraphQLSchema({
 		},
 	}),
 })
+
+module.exports = {schema}
