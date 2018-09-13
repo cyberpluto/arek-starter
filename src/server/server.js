@@ -4,7 +4,7 @@ import {StaticRouter} from 'react-router'
 import {ServerStyleSheet, StyleSheetManager} from 'styled-components'
 import sprite from 'svg-sprite-loader/runtime/sprite.build'
 import App from 'components/App'
-import reset from '../styles/reset.css'
+import normalize from '../styles/normalize.css'
 import {ApolloClient} from 'apollo-client'
 import {ApolloProvider, renderToStringWithData} from 'react-apollo'
 import {HttpLink} from 'apollo-link-http'
@@ -66,7 +66,7 @@ app.get('*', async (req, res) => {
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 				<script src="bundle.js" defer></script>
-				<style>${reset.toString()}</style>
+				<style>${normalize.toString()}</style>
 				${styleTags}
 			</head>
     

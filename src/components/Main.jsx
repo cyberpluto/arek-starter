@@ -9,6 +9,7 @@ import GraphQLButton from 'components/GraphQLButton'
 const Wrapper = styled.div`
 	text-align: center;
 	width: 100%;
+	font-family: sans-serif;
 `
 const ButtonWrapper = styled.div`
 	display: flex;
